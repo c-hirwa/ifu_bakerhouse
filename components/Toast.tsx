@@ -18,7 +18,7 @@ export function Toast() {
       {show && !open && lastAdded && (
         <div key={lastAdded.key} className="drop-in pointer-events-auto flex items-center gap-4 rounded-full border-3 border-cocoa bg-paper py-2 pl-5 pr-2 shadow-[4px_4px_0_#3a1e14]">
           <p className="text-sm font-semibold">Added {lastAdded.name}</p>
-          <button onClick={() => setOpen(true)} className="rounded-full bg-cocoa px-4 py-2 text-sm font-bold text-butter">View basket</button>
+          <button onClick={() => setOpen(true)} className="rounded-full bg-cocoa px-4 py-2 text-sm font-bold text-sand">View basket</button>
         </div>
       )}
     </div>

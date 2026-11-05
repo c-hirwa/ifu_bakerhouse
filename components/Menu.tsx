@@ -11,7 +11,7 @@ export function Menu() {
   const cat = MENU.find((c) => c.id === tab)!;
 
   return (
-    <section id="menu" aria-labelledby="menu-h" className="border-y-3 border-cocoa bg-pistachio/35">
+    <section id="menu" aria-labelledby="menu-h" className="border-y-3 border-cocoa bg-latte/35">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <h2 id="menu-h" className="font-display text-5xl leading-none sm:text-6xl">The menu</h2>
@@ -27,7 +27,7 @@ export function Menu() {
               aria-controls="menu-panel"
               onClick={() => setTab(c.id)}
               className={`shrink-0 rounded-full border-3 border-cocoa px-4 py-2 font-semibold transition-colors
-                ${tab === c.id ? "bg-cocoa text-butter" : "bg-paper hover:bg-butter-soft"}`}
+                ${tab === c.id ? "bg-cocoa text-sand" : "bg-paper hover:bg-cream"}`}
             >
               {c.label}
             </button>
@@ -53,7 +53,7 @@ export function Menu() {
                       {q === 0 ? (
                         <button
                           onClick={() => setQty(item.id, 1)}
-                          className="rounded-full border-2 border-cocoa bg-butter px-3 py-1 text-sm font-bold hover:bg-icing transition-colors"
+                          className="rounded-full border-2 border-cocoa bg-sand px-3 py-1 text-sm font-bold hover:bg-caramel transition-colors"
                           aria-label={`Add ${item.name}`}
                         >
                           Add
@@ -76,9 +76,9 @@ export function Menu() {
 export function Stepper({ value, onChange, label }: { value: number; onChange: (n: number) => void; label: string }) {
   return (
     <div className="flex items-center rounded-full border-2 border-cocoa bg-paper text-sm font-bold">
-      <button onClick={() => onChange(value - 1)} className="grid size-7 place-items-center rounded-full hover:bg-butter-soft" aria-label={`One less ${label}`}>−</button>
+      <button onClick={() => onChange(value - 1)} className="grid size-7 place-items-center rounded-full hover:bg-cream" aria-label={`One less ${label}`}>−</button>
       <span className="w-6 text-center tabular-nums" aria-live="polite">{value}</span>
-      <button onClick={() => onChange(value + 1)} className="grid size-7 place-items-center rounded-full hover:bg-butter-soft" aria-label={`One more ${label}`}>+</button>
+      <button onClick={() => onChange(value + 1)} className="grid size-7 place-items-center rounded-full hover:bg-cream" aria-label={`One more ${label}`}>+</button>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export function BakeSchedule() {
               )}
               <span
                 className={`relative z-10 grid size-8 shrink-0 place-items-center rounded-full border-3 border-cocoa text-xs font-bold
-                  ${state === "out" ? "bg-cocoa text-butter" : state === "next" ? "bg-icing" : "bg-paper"}`}
+                  ${state === "out" ? "bg-cocoa text-sand" : state === "next" ? "bg-caramel" : "bg-paper"}`}
                 aria-hidden="true"
               >
                 {state === "out" ? "✓" : ""}

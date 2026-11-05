@@ -49,7 +49,7 @@ export function BasketDrawer() {
         className={`absolute bottom-0 right-0 flex max-h-[90dvh] w-full flex-col rounded-t-[2rem] border-3 border-cocoa bg-paper outline-none transition-transform duration-300 ease-out
           sm:top-0 sm:max-h-none sm:max-w-md sm:rounded-none sm:rounded-l-[2rem]
           ${open ? "translate-y-0 sm:translate-x-0" : "translate-y-full sm:translate-y-0 sm:translate-x-full"}`}>
-        <div className="flex items-center border-b-3 border-cocoa bg-butter px-5 py-4 rounded-t-[1.8rem] sm:rounded-tr-none">
+        <div className="flex items-center border-b-3 border-cocoa bg-sand px-5 py-4 rounded-t-[1.8rem] sm:rounded-tr-none">
           <h2 className="font-display text-3xl">Your basket</h2>
           <button onClick={() => setOpen(false)} className="ml-auto grid size-10 place-items-center rounded-full border-3 border-cocoa bg-paper text-xl font-bold" aria-label="Close basket">×</button>
         </div>
@@ -60,7 +60,7 @@ export function BasketDrawer() {
               <Art name="croissant" className="mx-auto size-28 opacity-80" />
               <p className="mt-4 font-semibold">Nothing in here yet.</p>
               <p className="text-cocoa-soft">Add a few things from the menu and they&apos;ll show up here.</p>
-              <a href="#menu" onClick={() => setOpen(false)} className="btn mt-6 bg-butter">Browse the menu</a>
+              <a href="#menu" onClick={() => setOpen(false)} className="btn mt-6 bg-sand">Browse the menu</a>
             </div>
           </div>
         ) : (
@@ -81,11 +81,11 @@ export function BasketDrawer() {
               </li>
             </ul>
 
-            <div className="space-y-4 border-t-3 border-cocoa bg-butter-soft px-5 py-5">
+            <div className="space-y-4 border-t-3 border-cocoa bg-cream px-5 py-5">
               <div className="grid grid-cols-2 gap-2 rounded-full border-3 border-cocoa bg-paper p-1" role="radiogroup" aria-label="Pickup or delivery">
                 {(["pickup", "delivery"] as const).map((m) => (
                   <button key={m} role="radio" aria-checked={mode === m} onClick={() => setMode(m)}
-                    className={`rounded-full py-2 font-bold capitalize transition-colors ${mode === m ? "bg-cocoa text-butter" : ""}`}>
+                    className={`rounded-full py-2 font-bold capitalize transition-colors ${mode === m ? "bg-cocoa text-sand" : ""}`}>
                     {m}
                   </button>
                 ))}
@@ -117,7 +117,7 @@ export function BasketDrawer() {
                 </div>
                 <p className="font-display text-3xl tabular-nums">{rwf(total)}</p>
               </div>
-              <button onClick={send} className="btn w-full bg-cocoa text-butter"><WhatsAppIcon /> Send order on WhatsApp</button>
+              <button onClick={send} className="btn w-full bg-cocoa text-sand"><WhatsAppIcon /> Send order on WhatsApp</button>
               <p className="text-center text-xs text-cocoa-soft">Pay with MoMo or cash when you collect.</p>
             </div>
           </>

@@ -21,9 +21,9 @@ const SPONGES = [
 const FROSTINGS = [
   { name: "Vanilla cream", hex: "#fff6e5" },
   { name: "Strawberry", hex: "#ffb3cf" },
-  { name: "Pistachio", hex: "#b9e4b5" },
-  { name: "Butter yellow", hex: "#ffe27a" },
-  { name: "Sky blue", hex: "#a9d6f5" },
+  { name: "Salted caramel", hex: "#c99a6b" },
+  { name: "Mocha", hex: "#a67b5b" },
+  { name: "Coffee", hex: "#8a5a3c" },
   { name: "Chocolate", hex: "#6b3b26" },
 ];
 const TOPPINGS = [
@@ -46,7 +46,7 @@ export function CakeDesigner() {
   const [d, setD] = useState<CakeDesign>({
     tiers: 2,
     sponge: SPONGES[0].hex,
-    frosting: FROSTINGS[1].hex,
+    frosting: FROSTINGS[0].hex,
     finish: "smooth",
     drip: "chocolate",
     toppings: { berries: true, sprinkles: false, candles: true, flowers: false },
@@ -100,7 +100,7 @@ export function CakeDesigner() {
   return (
     <section id="cakes" aria-labelledby="cakes-h" className="bg-cocoa text-paper">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
-        <h2 id="cakes-h" className="font-display text-5xl leading-none text-butter sm:text-7xl">Design your cake.</h2>
+        <h2 id="cakes-h" className="font-display text-5xl leading-none text-sand sm:text-7xl">Design your cake.</h2>
         <p className="mt-4 max-w-lg text-lg text-paper/80">
           Build it here, see it as you go, then send the design to us on WhatsApp. We confirm the price and you pay a 50% MoMo deposit.
         </p>
@@ -108,7 +108,7 @@ export function CakeDesigner() {
         <div className="mt-10 grid gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
           {/* preview */}
           <div className="md:sticky md:top-24 md:self-start">
-            <div className="relative aspect-square rounded-[2.5rem] border-3 border-paper bg-butter p-4 shadow-[6px_6px_0_#ff9ec4]">
+            <div className="relative aspect-square rounded-[2.5rem] border-3 border-paper bg-sand p-4 shadow-[6px_6px_0_#b9814f]">
               <CakeSVG d={d} />
               <div className="absolute bottom-4 right-4 -rotate-6 rounded-2xl border-3 border-cocoa bg-paper px-3 py-2 text-cocoa shadow-[3px_3px_0_#3a1e14]">
                 <p className="text-xs font-semibold">Serves {size.serves}</p>
@@ -150,7 +150,7 @@ export function CakeDesigner() {
                     <button key={t.k} type="button" aria-pressed={on}
                       onClick={() => set("toppings", { ...d.toppings, [t.k]: !on })}
                       className={`rounded-full border-3 px-4 py-2 text-left font-semibold transition-colors
-                        ${on ? "border-icing bg-icing text-cocoa" : "border-paper/40 hover:border-paper"}`}>
+                        ${on ? "border-caramel bg-caramel text-cocoa" : "border-paper/40 hover:border-paper"}`}>
                       {t.label} <span className="font-normal opacity-75">+{rwf(t.price)}</span>
                     </button>
                   );
@@ -162,16 +162,16 @@ export function CakeDesigner() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Message on the cake" hint={`${d.message.length}/24`}>
                   <input value={d.message} maxLength={24} onChange={(e) => set("message", e.target.value)}
-                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-butter outline-none" placeholder="Leave blank for none" />
+                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-sand outline-none" placeholder="Leave blank for none" />
                 </Field>
                 <Field label="Your name">
                   <input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name"
-                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-butter outline-none" />
+                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-sand outline-none" />
                 </Field>
                 <Field label="Pickup date" error={dateError}>
                   <input type="date" value={date} min={minDate} onChange={(e) => setDate(e.target.value)}
                     aria-invalid={!!dateError}
-                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-butter outline-none [color-scheme:dark]" />
+                    className="w-full rounded-xl border-3 border-paper/40 bg-transparent px-3 py-2.5 focus:border-sand outline-none [color-scheme:dark]" />
                 </Field>
               </div>
             </Step>
@@ -179,9 +179,9 @@ export function CakeDesigner() {
             <div className="flex flex-wrap items-center gap-4 border-t-2 border-dashed border-paper/30 pt-6">
               <div>
                 <p className="text-sm text-paper/70">Estimated total</p>
-                <p className="font-display text-3xl text-butter tabular-nums">{rwf(total)}</p>
+                <p className="font-display text-3xl text-sand tabular-nums">{rwf(total)}</p>
               </div>
-              <button onClick={send} className="btn ml-auto bg-butter text-cocoa">
+              <button onClick={send} className="btn ml-auto bg-sand text-cocoa">
                 <WhatsAppIcon /> Send cake order on WhatsApp
               </button>
             </div>
@@ -212,8 +212,8 @@ function Chips({ name, value, onChange, options }: {
       {options.map((o) => {
         const on = o.v === value;
         return (
-          <label key={o.v} className={`cursor-pointer rounded-2xl border-3 px-4 py-2 transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-butter has-[:focus-visible]:outline-offset-2
-            ${on ? "border-butter bg-butter text-cocoa" : "border-paper/40 hover:border-paper"}`}>
+          <label key={o.v} className={`cursor-pointer rounded-2xl border-3 px-4 py-2 transition-colors has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-sand has-[:focus-visible]:outline-offset-2
+            ${on ? "border-sand bg-sand text-cocoa" : "border-paper/40 hover:border-paper"}`}>
             <input type="radio" name={name} value={o.v} checked={on} onChange={() => onChange(o.v)} className="sr-only" />
             <span className="block font-semibold leading-tight">{o.label}</span>
             {o.sub && <span className="block text-xs opacity-75">{o.sub}</span>}
@@ -233,8 +233,8 @@ function Swatches({ name, value, onChange, options }: {
         const on = o.v === value;
         return (
           <label key={o.v} title={o.label}
-            className={`relative size-12 cursor-pointer rounded-full border-3 transition-transform has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-butter has-[:focus-visible]:outline-offset-3
-              ${on ? "scale-110 border-butter ring-3 ring-butter ring-offset-3 ring-offset-cocoa" : "border-paper/50 hover:scale-105"}`}
+            className={`relative size-12 cursor-pointer rounded-full border-3 transition-transform has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-sand has-[:focus-visible]:outline-offset-3
+              ${on ? "scale-110 border-sand ring-3 ring-sand ring-offset-3 ring-offset-cocoa" : "border-paper/50 hover:scale-105"}`}
             style={{ background: o.v }}>
             <input type="radio" name={name} value={o.v} checked={on} onChange={() => onChange(o.v)} className="sr-only" aria-label={o.label} />
           </label>
@@ -252,7 +252,7 @@ function Field({ label, hint, error, children }: { label: string; hint?: string;
         {hint && <span className="ml-auto font-normal text-paper/60">{hint}</span>}
       </span>
       {children}
-      {error && <span className="mt-1.5 block text-sm font-semibold text-icing" role="alert">{error}</span>}
+      {error && <span className="mt-1.5 block text-sm font-semibold text-caramel" role="alert">{error}</span>}
     </label>
   );
 }
