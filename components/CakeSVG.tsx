@@ -33,7 +33,7 @@ function rand(seed: number) {
 }
 
 const DRIP = { chocolate: "#4a2414", caramel: "#c9802f" };
-const SPRINKLE = ["#ff9ec4", "#ffd84d", "#9ed8a6", "#7cc4f0", "#fffdf7"];
+const SPRINKLE = ["#b9814f", "#d9b27c", "#a67b5b", "#8a5a3c", "#fffdf7"];
 
 export function CakeSVG({ d }: { d: CakeDesign }) {
   const tiers = TIERS.slice(0, d.tiers).map((t, i, arr) => {
@@ -93,7 +93,7 @@ export function CakeSVG({ d }: { d: CakeDesign }) {
           {d.toppings.flowers && (
             <>
               <Flower cx={t.x + 18} cy={t.y + 6} />
-              <Flower cx={t.x + t.w - 18} cy={t.y + 6} color="#fffdf7" />
+              <Flower cx={t.x + t.w - 18} cy={t.y + 6} color="#c99a6b" />
             </>
           )}
         </g>
@@ -123,7 +123,7 @@ export function CakeSVG({ d }: { d: CakeDesign }) {
         [-36, 0, 36].map((dx) => (
           <g key={dx}>
             <rect x={200 + dx - 5} y={top.y - 46} width="10" height="40" rx="3" fill="#fffdf7" stroke={INK} strokeWidth="2.5" />
-            <path d={`M${200 + dx - 5} ${top.y - 34} l10 -6 M${200 + dx - 5} ${top.y - 20} l10 -6`} stroke="#ff9ec4" strokeWidth="3" />
+            <path d={`M${200 + dx - 5} ${top.y - 34} l10 -6 M${200 + dx - 5} ${top.y - 20} l10 -6`} stroke="#b9814f" strokeWidth="3" />
             <path className="flame" d={`M${200 + dx} ${top.y - 64} c7 8 7 14 0 16 c-7 -2 -7 -8 0 -16z`} fill="#ffb627" stroke={INK} strokeWidth="2" />
           </g>
         ))}
@@ -131,13 +131,13 @@ export function CakeSVG({ d }: { d: CakeDesign }) {
   );
 }
 
-function Flower({ cx, cy, color = "#ff9ec4" }: { cx: number; cy: number; color?: string }) {
+function Flower({ cx, cy, color = "#f3e6d3" }: { cx: number; cy: number; color?: string }) {
   return (
     <g stroke={INK} strokeWidth="2">
       {[0, 72, 144, 216, 288].map((a) => (
         <circle key={a} cx={cx + 8 * Math.cos((a * Math.PI) / 180)} cy={cy + 8 * Math.sin((a * Math.PI) / 180)} r="6" fill={color} />
       ))}
-      <circle cx={cx} cy={cy} r="4.5" fill="#ffd84d" />
+      <circle cx={cx} cy={cy} r="4.5" fill="#d9b27c" />
     </g>
   );
 }

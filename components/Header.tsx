@@ -10,7 +10,7 @@ export function Header() {
   const status = now ? openStatus(now) : null;
 
   return (
-    <header className="sticky top-0 z-30 border-b-3 border-cocoa bg-butter">
+    <header className="sticky top-0 z-30 border-b-3 border-cocoa bg-sand">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
         <a href="#top" className="flex items-baseline gap-1.5" aria-label="Ifu Bakehouse home">
           <span className="font-display text-3xl leading-none">ifu</span>
@@ -34,7 +34,7 @@ export function Header() {
         >
           <BasketIcon />
           <span>Basket</span>
-          <span key={count} className={`grid min-w-6 place-items-center rounded-full bg-cocoa px-1.5 text-xs text-butter ${count ? "bump" : ""}`}>
+          <span key={count} className={`grid min-w-6 place-items-center rounded-full bg-cocoa px-1.5 text-xs text-sand ${count ? "bump" : ""}`}>
             {count}
           </span>
         </button>

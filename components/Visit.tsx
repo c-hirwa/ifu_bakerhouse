@@ -20,13 +20,13 @@ export function Visit() {
           <p className="mt-4 text-lg">{BAKERY.address}</p>
           <p className="text-cocoa-soft">Across from the petrol station, look for the yellow door.</p>
           {status && (
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full border-3 border-cocoa bg-butter px-4 py-2 font-bold">
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border-3 border-cocoa bg-sand px-4 py-2 font-bold">
               <span className={`size-2.5 rounded-full ${status.open ? "bg-green-600" : "bg-cocoa-soft"}`} />
               {status.open ? "Open now. " : "Closed now. "}{status.label}
             </p>
           )}
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={waLink("Hi Ifu Bakehouse!")} target="_blank" rel="noopener" className="btn bg-cocoa text-butter"><WhatsAppIcon /> Message us</a>
+            <a href={waLink("Hi Ifu Bakehouse!")} target="_blank" rel="noopener" className="btn bg-cocoa text-sand"><WhatsAppIcon /> Message us</a>
             <a href="https://maps.google.com/?q=Kimihurura,Kigali" target="_blank" rel="noopener" className="btn bg-paper">Get directions</a>
           </div>
         </div>
@@ -41,7 +41,7 @@ export function Visit() {
                 <tr key={h.day} className={`border-b-2 border-dashed border-cocoa/25 ${isToday ? "font-bold" : ""}`}>
                   <th scope="row" className="py-3 font-[inherit]">
                     {h.day}
-                    {isToday && <span className="ml-2 rounded-full bg-icing px-2 py-0.5 text-xs">Today</span>}
+                    {isToday && <span className="ml-2 rounded-full bg-caramel px-2 py-0.5 text-xs">Today</span>}
                   </th>
                   <td className="py-3 text-right tabular-nums">{h.open} – {h.close}</td>
                 </tr>

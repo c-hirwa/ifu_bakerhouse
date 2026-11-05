@@ -2,7 +2,7 @@ import { Art } from "./Art";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-butter">
+    <section id="top" className="relative overflow-hidden bg-sand">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-10 pb-16 sm:px-6 md:grid-cols-[1.1fr_1fr] md:pt-16 md:pb-24">
         <div>
           <h1 className="font-display text-[clamp(3rem,9vw,6.5rem)] leading-[0.92] tracking-tight">
@@ -13,8 +13,8 @@ export function Hero() {
             Order everything on WhatsApp.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#menu" className="btn bg-cocoa text-butter">See today&apos;s menu</a>
-            <a href="#cakes" className="btn bg-icing">Design a cake</a>
+            <a href="#menu" className="btn bg-cocoa text-sand">See today&apos;s menu</a>
+            <a href="#cakes" className="btn bg-caramel">Design a cake</a>
           </div>
         </div>
 

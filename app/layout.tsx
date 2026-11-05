@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Concept project: a neighbourhood bakery in Kigali. Browse the menu, design your own cake and order on WhatsApp.",
 };
 
-export const viewport: Viewport = { themeColor: "#ffd84d" };
+export const viewport: Viewport = { themeColor: "#e6cfae" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

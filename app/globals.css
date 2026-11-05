@@ -3,14 +3,14 @@
 @import "@fontsource-variable/figtree/wght.css";
 
 @theme {
-  --color-butter: #ffd84d;
-  --color-butter-soft: #fff3c2;
+  --color-sand: #e6cfae;
+  --color-cream: #f3e6d3;
   --color-cocoa: #3a1e14;
   --color-cocoa-soft: #6b4636;
-  --color-icing: #ff9ec4;
-  --color-pistachio: #9ed8a6;
-  --color-crust: #d9893b;
-  --color-paper: #fffdf7;
+  --color-caramel: #c08552;
+  --color-latte: #a67b5b;
+  --color-crust: #9c6236;
+  --color-paper: #fbf6ef;
   --font-display: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif;
   --font-sans: "Figtree Variable", system-ui, sans-serif;
 }
